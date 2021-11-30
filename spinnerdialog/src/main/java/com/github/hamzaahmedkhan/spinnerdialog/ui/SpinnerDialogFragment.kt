@@ -6,6 +6,8 @@ import android.text.TextWatcher
 import android.util.Size
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.github.hamzaahmedkhan.spinnerdialog.R
@@ -37,7 +39,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
 
     // Properties
     var title = ""
-    var subtitle = ""
+    var subtitle: String? = ""
     var searchbarHint = "type here to search..."
     var themeColorResId: Int = -1
     var buttonText: String = "OK"
@@ -103,7 +105,13 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
 
         // Set text of title
         txtTitle.text = title
-        txtSubtitle.text = subtitle
+        subtitle?.let {
+            txtSubtitle.text = it
+            txtSubtitle.visibility = VISIBLE
+        } ?: run {
+            txtSubtitle.visibility = GONE
+        }
+
         edtSearch.hint = searchbarHint
 
         // init Adapter
@@ -230,7 +238,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
         fun newInstance(
             spinnerSelectionType: SpinnerSelectionType,
             title: String,
-            subtitle: String,
+            subtitle: String?,
             arrData: ArrayList<SpinnerModel>,
             onSpinnerOKPressedListener: OnSpinnerOKPressedListener,
             scrollToPosition: Int,
