@@ -23,20 +23,35 @@
                 android:layout_height="wrap_content"
                 android:background="@color/material_blue400"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
 
             <TextView
                     android:id="@+id/txtTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:text="Title"
                     android:textColor="@color/material_white"
                     android:textSize="16sp" />
+
+            <TextView
+                    android:id="@+id/txtSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:singleLine="true"
+                    android:text="Title"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:visibility="gone"
+                    android:textColor="@color/material_white"
+                    android:textStyle="italic"
+                    android:textSize="12sp" />
 
 
         </LinearLayout>

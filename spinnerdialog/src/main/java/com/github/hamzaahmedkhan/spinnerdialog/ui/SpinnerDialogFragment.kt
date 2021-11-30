@@ -37,6 +37,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
 
     // Properties
     var title = ""
+    var subtitle = ""
     var searchbarHint = "type here to search..."
     var themeColorResId: Int = -1
     var buttonText: String = "OK"
@@ -102,6 +103,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
 
         // Set text of title
         txtTitle.text = title
+        txtSubtitle.text = subtitle
         edtSearch.hint = searchbarHint
 
         // init Adapter
@@ -228,6 +230,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
         fun newInstance(
             spinnerSelectionType: SpinnerSelectionType,
             title: String,
+            subtitle: String,
             arrData: ArrayList<SpinnerModel>,
             onSpinnerOKPressedListener: OnSpinnerOKPressedListener,
             scrollToPosition: Int,
@@ -238,6 +241,7 @@ class SpinnerDialogFragment : androidx.fragment.app.DialogFragment(),
                 SpinnerDialogFragment()
             val args = Bundle()
             frag.title = title
+            frag.subtitle = subtitle
             frag.arrData.addAll(arrData)
             frag.arrFilteredData.addAll(arrData)
             frag.scrollToPosition = scrollToPosition
