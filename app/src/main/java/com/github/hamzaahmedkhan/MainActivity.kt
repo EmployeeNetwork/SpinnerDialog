@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         // Init single select Fragment
         val spinnerSingleSelectDialogFragment =
             SpinnerDialogFragment.newInstance(
-                SpinnerSelectionType.SINGLE_SELECTION, "Spinner Dialog", arraySpinnerModel,
+                SpinnerSelectionType.SINGLE_SELECTION, "Spinner Dialog", null, arraySpinnerModel,
                 object :
                     OnSpinnerOKPressedListener {
                     override fun onSingleSelection(data: SpinnerModel, selectedPosition: Int) {
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         // Init multi select Fragment
         val spinnerMultiSelectDialogFragment =
             SpinnerDialogFragment.newInstance(
-                SpinnerSelectionType.MULTI_SELECTION, "Spinner Dialog", arraySpinnerModel,
+                SpinnerSelectionType.MULTI_SELECTION, "Spinner Dialog", null, arraySpinnerModel,
                 object :
                     OnSpinnerOKPressedListener {
                     override fun onSingleSelection(data: SpinnerModel, selectedPosition: Int) {
